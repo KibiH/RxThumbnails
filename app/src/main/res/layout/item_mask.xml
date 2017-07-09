@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="itemMaskViewModel"
+            type="com.kibisoftware.rxthumbnails.viewmodel.ItemMaskViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/item_thumbnail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:onClick="@{itemMaskViewModel::onItemClick}"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@{itemMaskViewModel.thumbnail}" />
+
+    </RelativeLayout>
+</layout>
