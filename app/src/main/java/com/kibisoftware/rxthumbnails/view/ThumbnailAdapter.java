@@ -65,6 +65,9 @@ public class ThumbnailAdapter extends RecyclerView.Adapter {
         void bindMask(MaskInfo maskInfo) {
             if (itemMaskBinding.getItemMaskViewModel() == null) {
                 itemMaskBinding.setItemMaskViewModel(
+                        // so each item can connect back to the main screen view model
+                        // this seems wrong but I'm not sure what the right thing to do is
+                        // and I wanted to send something by Sunday
                         new ItemMaskViewModel(maskViewModel, maskInfo));
             } else {
                 itemMaskBinding.getItemMaskViewModel().setMask(maskInfo);

@@ -94,6 +94,7 @@ public class MaskViewModel extends BaseObservable {
     private Observable<Integer> downloaderObservable = Observable.create(new ObservableOnSubscribe<Integer>() {
         @Override
         public void subscribe(ObservableEmitter emitter) throws Exception {
+            // this on next is just called so I have a place to start the progress spinner
             emitter.onNext(1);
             fakeDownloader.assureDownloadedMask(currentUrl);
             setDrawableByUrl(currentUrl);

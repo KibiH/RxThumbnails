@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         thumbnailActivityBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
 
         maskViewModel = new MaskViewModel(this);
+
         thumbnailActivityBinding.setMaskViewModel(maskViewModel);
     }
 
@@ -34,6 +35,10 @@ public class MainActivity extends AppCompatActivity {
     public void onResume() {
         super.onResume();
         ThumbnailAdapter thumbnailAdapter = (ThumbnailAdapter) thumbnailActivityBinding.maskList.getAdapter();
+
+        // I'm passing the viewModel to the adapter so I can pass it to the viewmodel of the list
+        // items. This seems inelegant to me, but I was unclear how to connect viewmodel actions
+        // on the list with viewmodel stuff in the main view... this probably is not good
         thumbnailAdapter.setMaskViewModel(maskViewModel);
 
     }

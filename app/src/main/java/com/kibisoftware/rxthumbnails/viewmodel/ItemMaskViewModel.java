@@ -31,6 +31,8 @@ public class ItemMaskViewModel extends BaseObservable {
     public void onItemClick(View view) {
         // make the call to our faux loader
         // but we need to do this on the main screen viewmodel since all the UI happens there
+
+        // pull a file name out of the URL (since we aren't really using the url
         maskViewModel.requestMask(getMaskUrl().substring(getMaskUrl().length() - 10));
     }
 
